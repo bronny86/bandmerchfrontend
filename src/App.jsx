@@ -8,11 +8,23 @@ import {
     useLocation,
 } from "react-router-dom"; 
 
+import { useReducer } from "react";
+
+import UserDetail from "./components/UserDetail.jsx";
+import UserForm from "./components/UserForm.jsx";
+
+import globalReducer, { GlobalContext } from "./reducers/globalReducer";
+
 import { Home } from "./pages/Home"; // Use the imported Home component
 import { Cart } from "./pages/Cart";
 import { SignUp } from "./pages/SignUp";
 import { LogIn } from "./pages/Login";
 import { GetStarted } from "./pages/GetStarted";
+
+const initialState = {
+    token: localStorage.getItem("token") ?? "",
+    user: JSON.parse(localStorage.getItem("user")) ?? {},
+};
 
 function AppContent() {
     const location = useLocation();
@@ -35,9 +47,16 @@ function AppContent() {
 }
 
 function App() {
+ 
+    const [store, dispatch] = useReducer(globalReducer, initialState);
+
     return (
         <Router>
             <AppContent />
+            <GlobalContext.Provider value={{ store, dispatch }}>
+            <UserForm />
+            <UserDetail />
+            </GlobalContext.Provider>
         </Router>
     );
 }
