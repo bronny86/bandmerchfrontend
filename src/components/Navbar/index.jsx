@@ -1,7 +1,7 @@
 import React from "react";
+import { NavLink } from "react-router-dom"; // Import NavLink from react-router-dom
 import {
     Nav,
-    NavLink,
     Bars,
     NavMenu,
     NavBtn,
@@ -15,31 +15,21 @@ const Navbar = () => {
                 <Bars />
 
                 <NavMenu>
-                    <NavLink to="/index" activestyle>
-                        Home
+                <NavLink to="/" activestyle={{ fontWeight: "bold", color: "red" }}>
+                    Home
                     </NavLink>
-                    <NavLink to="/GetStarted" activestyle>
+                    <NavLink to="/GetStarted" activestyle={{ fontWeight: "bold", color: "red" }}>
                         Get Started
                     </NavLink>
-                    
-                
-                    {/* Second Nav */}
-                    {/* <NavBtnLink to='/sign-in'>Sign In</NavBtnLink> */}
                 </NavMenu>
                 <NavBtn>
-                    <NavBtnLink to="/signup">
-                        Sign Up
-                    </NavBtnLink>
+                    <NavBtnLink to="/signup">Sign Up</NavBtnLink>
                 </NavBtn>
                 <NavBtn>
-                    <NavBtnLink to="/login">
-                        Login
-                    </NavBtnLink>
+                    <NavBtnLink to="/login">Login</NavBtnLink>
                 </NavBtn>
                 <NavBtn>
-                    <NavBtnLink to="/cart">
-                        Cart
-                    </NavBtnLink>
+                    <NavBtnLink to="/cart">Cart</NavBtnLink>
                 </NavBtn>
             </Nav>
         </>

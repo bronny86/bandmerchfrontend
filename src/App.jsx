@@ -4,36 +4,25 @@ import Navbar from "./components/Navbar";
 import {
     BrowserRouter as Router,
     Routes,
-    Route,
+    Route
 } from "react-router-dom";
 
-import { GetStarted } from "./pages/GetStarted"; // Use named import
-
-import Home from "./pages";
-import Cart from "./pages/Cart";
-import SignUp from "./pages/SignUp";
-import LogIn from "./pages/Login";
+import { Home } from "./pages/index"; // Use the imported Home component
+import { Cart } from "./pages/Cart";
+import { SignUp } from "./pages/SignUp";
+import { LogIn } from "./pages/Login";
+import { GetStarted } from "./pages/GetStarted";
 
 function App() {
     return (
         <Router>
             <Navbar />
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/index" element={<Home />} />
                 <Route path="/cart" element={<Cart />} />
-                <Route
-                    path="/GetStarted"
-                    element={<GetStarted />}
-              
-                />
-                <Route
-                    path="/login"
-                    element={<LogIn />}
-                />
-                <Route
-                    path="/sign-up"
-                    element={<SignUp />}
-                />
+                <Route path="/GetStarted" element={<GetStarted />} />
+                <Route path="/login" element={<LogIn />} />
+                <Route path="/sign-up" element={<SignUp />} />
             </Routes>
         </Router>
     );

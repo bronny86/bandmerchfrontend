@@ -1,18 +1,9 @@
 import React from "react";
 
-const LogIn = () => {
+export function LogIn() { // Named export
     return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "centre",
-                alignItems: "centre",
-                height: "100vh",
-            }}
-        >
-            <h1>LogIn</h1>
+        <div>
+            <h1>Log In Page</h1>
         </div>
     );
-};
-
-export default LogIn;
+}

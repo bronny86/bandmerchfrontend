@@ -1,18 +1,9 @@
 import React from "react";
 
-const Cart = () => {
+export function Cart() { // Named export
     return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "centre",
-                alignItems: "centre",
-                height: "100vh",
-            }}
-        >
-            <h1>Cart</h1>
+        <div>
+            <h1>Cart Page</h1>
         </div>
     );
-};
-
-export default Cart;
+}

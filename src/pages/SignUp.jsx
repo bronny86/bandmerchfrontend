@@ -1,18 +1,9 @@
 import React from "react";
 
-const SignUp = () => {
+export function SignUp() { // Named export
     return (
-        <div
-            style={{
-                display: "flex",
-                justifyContent: "centre",
-                alignItems: "centre",
-                height: "100vh",
-            }}
-        >
-            <h1>LogIn</h1>
+        <div>
+            <h1>Sign Up Page</h1>
         </div>
     );
-};
-
-export default SignUp;
+}
