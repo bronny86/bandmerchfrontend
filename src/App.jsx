@@ -1,13 +1,13 @@
 import React from "react";
 import "./App.css";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/Navbar/Navbar";
 import {
     BrowserRouter as Router,
     Routes,
     Route
 } from "react-router-dom"; 
 
-import { Home } from "./pages/index"; // Use the imported Home component
+import { Home } from "./pages/Home"; // Use the imported Home component
 import { Cart } from "./pages/Cart";
 import { SignUp } from "./pages/SignUp";
 import { LogIn } from "./pages/Login";
@@ -18,7 +18,7 @@ function App() {
         <Router>
             <Navbar />
             <Routes>
-                <Route path="/index" element={<Home />} />
+                <Route path="/" element={<Home />} />
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/GetStarted" element={<GetStarted />} />
                 <Route path="/login" element={<LogIn />} />

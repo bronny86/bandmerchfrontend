@@ -1,86 +1,119 @@
-import { FaBars } from "react-icons/fa";
-import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
+import { NavLink as RouterNavLink } from "react-router-dom";
 
-export const Nav = styled.nav`
-    background: #63d471;
-    height: 85px;
-    display: flex;
-    justify-content: space-between;
-    padding: 0.2rem calc((100vw - 1000px) / 2);
-    z-index: 12;
-    /* Third Nav */
-    /* justify-content: flex-start; */
-`;
-
-export const NavLink = styled(Link)`
-    color: #808080;
-    display: flex;
-    align-items: center;
-    text-decoration: none;
-    padding: 0 1rem;
-    height: 100%;
-    cursor: pointer;
-    &.active {
-        color: #000000;
-    }
-`;
-
-export const Bars = styled(FaBars)`
+export const Bars = styled.div`
     display: none;
-    color: #808080;
+    font-size: 2rem;
+    cursor: pointer;
+    color: #fff;
+    width: 30px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px; /* Vertically center the content */
+
     @media screen and (max-width: 768px) {
         display: block;
-        position: absolute;
-        top: 0;
-        right: 0;
-        transform: translate(-100%, 75%);
-        font-size: 1.8rem;
-        cursor: pointer;
+    }
+
+    &:before {
+        content: "\\2630"; /* Unicode for hamburger menu */
     }
 `;
 
 export const NavMenu = styled.div`
     display: flex;
     align-items: center;
-    margin-right: -24px;
-    /* Second Nav */
-    /* margin-right: 24px; */
-    /* Third Nav */
-    /* width: 100vw;
-  white-space: nowrap; */
+    justify-content: space-between; /* Space out the left and right sections */
+    flex-grow: 1; /* Allow the menu to take up available space */
+    margin-left: 20px; /* Add spacing between the menu and the hamburger icon */
+
     @media screen and (max-width: 768px) {
-        display: none;
+        display: none; /* Hide the full navbar on smaller screens */
     }
 `;
 
-export const NavBtn = styled.nav`
+export const NavMenuLeft = styled.div`
     display: flex;
     align-items: center;
-    margin-right: 24px;
-    /* Third Nav */
-    /* justify-content: flex-end;
-  width: 100vw; */
+    justify-content: flex-start; /* Align items to the left */
+    gap: 20px; /* Add spacing between items */
+`;
+
+export const NavMenuRight = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Align items to the right */
+    gap: 20px; /* Add spacing between items */
+`;
+
+export const Nav = styled.nav`
+    display: flex;
+    justify-content: space-between; /* Space out the navbar sections */
+    align-items: center;
+    height: 80px;
+    background: #333; /* Navbar background color */
+    padding: 0 20px; /* Add padding to the left and right */
+    color: #fff;
+    width: 100%; /* Ensure the navbar spans the full width of the screen */
+
     @media screen and (max-width: 768px) {
-        display: none;
+        justify-content: space-between;
     }
 `;
 
-export const NavBtnLink = styled(Link)`
-    border-radius: 4px;
-    background: #808080;
-    padding: 10px 22px;
-    color: #000000;
-    outline: none;
-    border: none;
-    cursor: pointer;
-    transition: all 0.2s ease-in-out;
+export const DropdownMenu = styled.div`
+    position: fixed; /* Position the menu relative to the viewport */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for the element's size */
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    width: 300px; /* Set a fixed width for the menu */
+    text-align: center;
+
+    a {
+        color: #000;
+        text-decoration: none;
+        padding: 10px;
+        border-bottom: 1px solid #eee;
+
+        &:last-child {
+            border-bottom: none;
+        }
+
+        &:hover {
+            background-color: #f0f0f0;
+        }
+    }
+`;
+
+export const NavBtn = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 10px; /* Add spacing between buttons */
+
+    @media screen and (max-width: 768px) {
+        display: none; /* Hide buttons on smaller screens */
+    }
+`;
+
+export const NavBtnLink = styled(RouterNavLink)`
+    background: #256ce1;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
     text-decoration: none;
-    /* Second Nav */
-    margin-left: 24px;
+    margin-left: 10px;
+
     &:hover {
-        transition: all 0.2s ease-in-out;
         background: #fff;
-        color: #808080;
+        color: #256ce1;
+        border: 1px solid #256ce1;
     }
 `;
