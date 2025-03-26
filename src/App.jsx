@@ -5,7 +5,7 @@ import {
     BrowserRouter as Router,
     Routes,
     Route
-} from "react-router-dom";
+} from "react-router-dom"; 
 
 import { Home } from "./pages/index"; // Use the imported Home component
 import { Cart } from "./pages/Cart";
@@ -22,7 +22,7 @@ function App() {
                 <Route path="/cart" element={<Cart />} />
                 <Route path="/GetStarted" element={<GetStarted />} />
                 <Route path="/login" element={<LogIn />} />
-                <Route path="/sign-up" element={<SignUp />} />
+                <Route path="/signup" element={<SignUp />} />
             </Routes>
         </Router>
     );
