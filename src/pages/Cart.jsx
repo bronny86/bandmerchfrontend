@@ -2,8 +2,17 @@ import React from "react";
 
 export function Cart() { // Named export
     return (
-        <div>
-            <h1>Cart Page</h1>
+        <div
+            style={{
+                display: "flex",
+                justifyContent: "centre",
+                alignItems: "centre",
+                height: "100vh",
+            }}
+        >
+            <h1>
+                Cart
+            </h1>
         </div>
     );
 }

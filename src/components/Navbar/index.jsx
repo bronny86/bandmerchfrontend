@@ -15,12 +15,17 @@ const Navbar = () => {
                 <Bars />
 
                 <NavMenu>
-                <NavLink to="/" activestyle={{ fontWeight: "bold", color: "red" }}>
-                    Home
+                <NavLink to="/"  activestyle={{ fontWeight: "bold", color: "red" }}>
+                    Home 
                     </NavLink>
-                    <NavLink to="/GetStarted" activestyle={{ fontWeight: "bold", color: "red" }}>
-                        Get Started
+                    <span style={{ margin: "0 10px" }}></span>
+
+                    <NavLink to="/GetStarted"  activestyle={{ fontWeight: "bold", color: "red" }}>
+                        Get Started 
                     </NavLink>
+                    <span style={{ margin: "0 10px" }}></span>
+                    <span style={{ margin: "0 10px" }}></span>
+                    <span style={{ margin: "0 10px" }}></span>
                 </NavMenu>
                 <NavBtn>
                     <NavBtnLink to="/signup">Sign Up</NavBtnLink>
