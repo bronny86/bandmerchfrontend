@@ -20,10 +20,31 @@ export const Bars = styled.div`
     }
 `;
 
+export const Nav = styled.nav`
+    display: flex;
+    justify-content: space-between; /* Space out the navbar sections */
+    align-items: center;
+    height: 80px;
+    background: #333; /* Navbar background color */
+    padding: 0 20px; /* Add padding to the left and right */
+    color: #fff;
+    width: 100%; /* Ensure the navbar spans the full width of the screen */
+    position: fixed; /* Keep the navbar at the top */
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Ensure it stays above other elements */
+
+
+    @media screen and (max-width: 768px) {
+        justify-content: space-between;
+    }
+`;
+
 export const NavMenu = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between; /* Space out the left and right sections */
+    width: 100%; /* Ensure the menu spans the full width */
     flex-grow: 1; /* Allow the menu to take up available space */
     margin-left: 20px; /* Add spacing between the menu and the hamburger icon */
 
@@ -36,30 +57,23 @@ export const NavMenuLeft = styled.div`
     display: flex;
     align-items: center;
     justify-content: flex-start; /* Align items to the left */
+    
     gap: 20px; /* Add spacing between items */
 `;
 
-export const NavMenuRight = styled.div`
+export const NavMenuRight = styled.div.attrs(() => ({
+    className: "nav-menu-right",
+}))`
     display: flex;
     align-items: center;
-    justify-content: flex-end; /* Align items to the right */
-    gap: 20px; /* Add spacing between items */
+    justify-content: flex-end;
+    gap: 10px;
+    padding-right: 10px;
+    flex-shrink: 0;
+    max-width: 100%;
 `;
 
-export const Nav = styled.nav`
-    display: flex;
-    justify-content: space-between; /* Space out the navbar sections */
-    align-items: center;
-    height: 80px;
-    background: #333; /* Navbar background color */
-    padding: 0 20px; /* Add padding to the left and right */
-    color: #fff;
-    width: 100%; /* Ensure the navbar spans the full width of the screen */
 
-    @media screen and (max-width: 768px) {
-        justify-content: space-between;
-    }
-`;
 
 export const DropdownMenu = styled.div`
     position: fixed; /* Position the menu relative to the viewport */

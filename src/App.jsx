@@ -1,10 +1,11 @@
 import React from "react";
-import "./App.css";
+import "./styles.css";
 import Navbar from "./components/Navbar/Navbar";
 import {
     BrowserRouter as Router,
     Routes,
-    Route
+    Route,
+    useLocation,
 } from "react-router-dom"; 
 
 import { Home } from "./pages/Home"; // Use the imported Home component
@@ -13,9 +14,14 @@ import { SignUp } from "./pages/SignUp";
 import { LogIn } from "./pages/Login";
 import { GetStarted } from "./pages/GetStarted";
 
-function App() {
+function AppContent() {
+    const location = useLocation();
+
     return (
-        <Router>
+        <div 
+            id="root"
+            className={location.pathname === "/signup" ? "signup" : ""}
+        >
             <Navbar />
             <Routes>
                 <Route path="/" element={<Home />} />
@@ -24,6 +30,14 @@ function App() {
                 <Route path="/login" element={<LogIn />} />
                 <Route path="/signup" element={<SignUp />} />
             </Routes>
+        </div>
+    );
+}
+
+function App() {
+    return (
+        <Router>
+            <AppContent />
         </Router>
     );
 }
