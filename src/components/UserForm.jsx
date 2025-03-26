@@ -28,7 +28,7 @@ export default function UserForm() {
             "Basic " + btoa(username + ":" + password)
         );
 
-        const resp = await fetch("http://localhost:3001", {
+        const resp = await fetch("http://localhost:5173", {
             headers: headers,
         });
 
@@ -60,7 +60,7 @@ export default function UserForm() {
             store.token
         );
 
-        const resp = await fetch("http://localhost:3001/someProtectedRoute", {
+        const resp = await fetch("http://localhost:5173/someProtectedRoute", {
             headers: headers,
         });
 
